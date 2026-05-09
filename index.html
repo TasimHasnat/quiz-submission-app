@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Quiz App</title>
+    <meta name="description" content="A modern, interactive online quiz application.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <span class="icon">🌙</span>
+    </div>
+
+    <main class="app-container">
+        <!-- Start Screen -->
+        <section id="start-screen" class="screen active">
+            <div class="glass-card">
+                <div class="icon-header">🧠</div>
+                <h1>Brain Test</h1>
+                <p>Test your knowledge with our interactive quiz.</p>
+                <div class="stats-preview" id="highScorePreview">
+                    High Score: <span>0</span>
+                </div>
+                <button id="startBtn" class="primary-btn">Start Quiz <span class="arrow">→</span></button>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen">
+            <div class="glass-card quiz-card">
+                <header class="quiz-header">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="header-info">
+                        <span id="questionCounter" class="badge">Question 1/10</span>
+                        <div class="timer">
+                            <span class="timer-icon">⏱️</span>
+                            <span id="timeText">15</span>s
+                        </div>
+                    </div>
+                </header>
+                
+                <div class="question-container">
+                    <h2 id="questionText">Loading question...</h2>
+                </div>
+
+                <div class="options-grid" id="optionsGrid">
+                    <!-- Options will be injected here via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="screen">
+            <div class="glass-card">
+                <div class="result-icon" id="resultIcon">🏆</div>
+                <h2 id="resultMessage">Quiz Completed!</h2>
+                
+                <div class="score-circle">
+                    <div class="score-text">
+                        <span id="finalScore">0</span>
+                        <small>out of <span id="totalQuestions">10</span></small>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="restartBtn" class="primary-btn">Play Again</button>
+                    <button id="clearScoreBtn" class="secondary-btn">Clear Scores</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
